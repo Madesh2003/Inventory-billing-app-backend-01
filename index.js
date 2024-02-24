@@ -23,6 +23,11 @@ app.use('/api',require('./Controllers/AuthenticationControllers'));
 app.use('/api',require('./Controllers/InvoiceControllers'));
 
 
+app.all('/',(req,res,next) =>{
+  res.status(200).json({
+    message:"server is working"
+  })
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
